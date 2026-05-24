@@ -52,7 +52,7 @@ cd autonomous-sales-engineer
 Run the project:
 
 ```bash
-python main.py
+python agent.py
 ```
 
 ---
