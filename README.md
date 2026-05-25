@@ -1,99 +1,123 @@
 # Autonomous Sales Engineer
 
 ## Overview
-An AI-powered Technical Sales Consultant that automatically generates complete product solutions based on user requirements, budget constraints, and logistics calculations.
+
+This project is an AI-powered Autonomous Sales Engineer agent that generates complete product solutions from a high-level customer requirement.
+
+It simulates a technical sales consultant that designs a full system (e.g., home office setup) by selecting items from a product catalog, applying constraints, ensuring budget compliance, and calculating total cost including logistics (shipping and tax).
 
 Example:
 "I need a minimalist home office under RM5000"
 
-The system:
+The system automatically:
 - Extracts requirements
-- Matches products
+- Selects suitable products
 - Applies budget constraints
-- Calculates shipping and taxes
+- Calculates shipping and tax
 - Generates a professional quotation
 
 ---
 
-# Features
+## Features
 
 - Constraint-based product selection
-- Budget validation
+- Budget-aware decision making
+- Product type matching (desk, chair, light, monitor)
 - Shipping and tax calculation
-- Automated quotation generation
+- Total Cost of Ownership (TCO) computation
 - Autonomous agent workflow
+- Automated quotation generation
 
 ---
 
-# Technologies Used
+## System Architecture
 
-- Python 3
-- Rule-based AI reasoning
-- Autonomous agent architecture
+The agent is divided into four components:
+
+### Planner Agent
+- Parses user request
+- Extracts budget, location, and required items
+
+### Solver Agent
+- Matches required product types from catalog
+- Ensures budget constraints are not violated
+- Selects optimal set of products
+
+### Logistics Module
+- Calculates shipping cost
+- Calculates tax based on total item price
+
+### Quote Generator
+- Produces final structured quotation
+- Includes item list, URLs, and final cost breakdown
 
 ---
 
-# System Requirements
+## Product Catalog
+
+The system uses a mock product catalog:
+
+- Minimal Desk (RM800)
+- Ergonomic Chair (RM600)
+- LED Lamp (RM120)
+- 27 inch Monitor (RM900)
+
+Each product includes:
+- Name
+- Price
+- Type
+- URL
+
+---
+
+## System Requirements
 
 - Python 3.10+
-- No external dependencies required
+- No external dependencies required (standard library only)
 
 ---
 
-# Installation
+## Installation & Usage
 
-Clone the repository:
-
+### Step 1: Clone repository
 ```bash
 git clone <your-repository-link>
 cd autonomous-sales-engineer
 ```
-
-Run the project:
-
+### Step 2: Run the program
 ```bash
 python agent.py
 ```
 
----
-
-# Project Structure
-
-```text
-agent.py
-README.md
-```
-
----
-
-# Example Output
-
-```text
+## Example Output
 AUTONOMOUS SALES ENGINEER QUOTE
 
 - Minimal Desk
+  Price: 800
+  URL: https://ikea.com/desk
+  Total Cost (with tax + shipping): XXXX
+
 - Ergonomic Chair
+  Price: 600
+  URL: https://ikea.com/chair
+  Total Cost (with tax + shipping): XXXX
+
 - LED Lamp
+  Price: 120
+  URL: https://ikea.com/lamp
+  Total Cost (with tax + shipping): XXXX
+
 - 27 inch Monitor
+  Price: 900
+  URL: https://amazon.com/monitor
+  Total Cost (with tax + shipping): XXXX
 
+------------------------------
 FINAL TOTAL COST: RMXXXX
-```
+------------------------------
 
----
-
-# Agent Workflow
-
-1. Planner Agent
-2. Constraint Solver Agent
-3. Logistics Agent
-4. Quote Generator Agent
-
----
-
-# Future Improvements
-
-- LLM integration
-- Real API product search
-- Smart recommendations
-- Web UI
-- Database support
+Reasoning Summary:
+- Retrieved items from product catalog
+- Applied constraint-based filtering
+- Calculated shipping and tax (TCO)
+- Ensured total budget compliance
